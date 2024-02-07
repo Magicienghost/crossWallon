@@ -8,6 +8,4 @@
 ## Fonctionnement 
 - Le fichier principal est [cross.py](./python/cross.py) (les autres fichiers python tendent à disparaître)
 
-
-### cross.py
-- [renderDossardsInit()](./python/cross.py#renderDossardsInit())
+WIP
