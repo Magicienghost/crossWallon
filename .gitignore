@@ -1,0 +1,10 @@
+# Exclure tous les fichiers Excel
+*.xls
+*.xlsx
+*.xlsm
+
+# Exclure tous les fichiers HTML
+*.html
+
+# Ne pas exclure ces fichiers spécifiques
+!fichier cross TEMPLATE.xlsx

@@ -1,0 +1,163 @@
+@page { margin: 0 }
+body { margin: 0 }
+.sheet {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+}
+
+/** Paper sizes **/
+body.A3           .sheet { width: 297mm; height: 419mm }
+body.A3.landscape .sheet { width: 420mm; height: 296mm }
+body.A4           .sheet { width: 210mm; height: 296mm }
+body.A4.landscape .sheet { width: 297mm; height: 209mm }
+body.A5           .sheet { width: 148mm; height: 209mm }
+body.A5.landscape .sheet { width: 210mm; height: 147mm }
+
+/** Padding area **/
+.sheet.padding-10mm { 
+    padding: 10mm;
+
+ }
+
+.sheet.padding-15mm { padding: 15mm }
+.sheet.padding-20mm { padding: 20mm }
+.sheet.padding-25mm { padding: 25mm }
+
+/** For screen preview **/
+@media screen {
+  body { background: #e0e0e0 }
+  .sheet {
+    background: white;
+    box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
+    margin: 5mm;
+  }
+}
+
+/** Fix for Chrome issue #273306 **/
+@media print {
+           body.A3.landscape { width: 420mm }
+  body.A3, body.A4.landscape { width: 297mm }
+  body.A4, body.A5.landscape { width: 210mm }
+  body.A5                    { width: 148mm }
+}
+
+.cell,.title_col{
+	display:inline-block;
+	height: 14px;
+	vertical-align: top;
+	font-family: Arial;
+}
+
+.title_col{
+	font-weight: 600;
+	height: 15px !important;
+	vertical-align: top;
+	padding-top: 5px;
+}
+
+.row_first{
+	height: 30px !important;
+	border-bottom: 1.5px solid black !important;
+}
+
+
+.logo,.title,.class_name{
+	font-family: Arial;
+	width:25%;
+	display:inline-block;
+	vertical-align: middle;
+} 
+
+.logo{
+	background-image: url(logo_wallon.png);
+	height: 200px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.title{
+	font-size:32px;
+	width: calc(48% - 30px);
+	margin: 0px 30px;
+	color: #99d5ff;
+	font-weight: 600;
+}
+
+.class_name{
+	width: calc(25% - 50px);
+	padding: 10px;
+	text-align: center;
+	font-size: 32px;
+	font-weight: 800;
+	vertical-align: middle;
+	color: #99d5ff;
+	border: 3px solid black;
+}
+
+
+.row{
+	border-bottom: 1px solid black;
+	font-size:11px;
+	height:13px;
+	vertical-align: top;
+	padding-bottom: 2px;
+	line-height:13px;
+} 
+
+
+.col_1{
+	width: 20%;
+}
+.col_2{
+	width: 20%;
+}
+
+.col_3{
+	width: 20% ;
+}
+
+.col_4{
+	width: 20% ;
+	position: relative;
+}
+
+.col_5{
+	width: 15% ;
+	position: relative;
+}
+
+.col_6{
+	width: 8% ;
+	position: relative;
+}
+
+.col_7{
+	width: 17% ;
+}
+
+.small{
+	font-weight: 400;
+}
+input{
+	position: relative;
+	top: -2px;
+}
+.parenthesis{
+	display: inline-block;
+	position: absolute;
+	left: 24px;
+}
+
+
+.footer{
+	position: absolute;
+	bottom: 10mm;
+	padding-top:  5mm;
+	font-size: 14px;
+	width: calc(100% - 20mm);
+	border-top:  1px solid black;
+	font-family: Arial;
+}
