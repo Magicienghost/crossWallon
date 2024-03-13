@@ -3,7 +3,7 @@ from datetime import datetime, time, timedelta
 from collections import defaultdict
 import re
 
-fileName = "../excel/fichier cross 2024.xlsx" # Nom du fichier excel du cross
+fileName = "../excel/fichier cross 2023.xlsm" # Nom du fichier excel du cross
 
 dateCross = "Mardi 26 mars 2024" # Date du cross
 
@@ -347,7 +347,7 @@ def getAllTime():
     <head>
       <meta charset="UTF-8">
       <title>Résultats de la course</title>
-      <link rel="stylesheet" type="text/css" href="style2.css">
+      <link rel="stylesheet" type="text/css" href="../styles/style2.css">
     </head>
     <body>
       <div id="header">
@@ -371,6 +371,8 @@ def getAllTime():
           </tr>
   """
 
+  count = 1
+
   html += """
         </table>
   <div style="page-break-after: always;" class="breakafter"></div>
@@ -378,46 +380,60 @@ def getAllTime():
   # Ajouter le classement des hommes et des femmes pour les différentes distances
   html += "<h2>Classement des coureurs individuels</h2>"
   html += "<p>Les vitesses nettes sont les vitesses calculées selon l'algorithme pour un équilibrage filles/garçons."
+
   # 8 km Hommes
   html += "<h3>8 km Hommes</h3>"
-  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
+  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Classement</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
   for runner in resList8Men:
-    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{count}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    count += 1
+  count = 1
+
   html += "</table>"
 
   # 8 km Femmes
   html += "<h3>8 km Femmes</h3>"
-  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
+  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Classement</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
   for runner in resList8Women:
-    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{count}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    count += 1
+  count = 1
   html += "</table>"
 
   # 5 km Hommes
   html += "<h3>5 km Hommes</h3>"
-  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
+  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Classement</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
   for runner in resList5Men:
-    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{count}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    count += 1
+  count = 1
   html += "</table>"
 
   # 5 km Femmes
   html += "<h3>5 km Femmes</h3>"
-  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
+  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Classement</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
   for runner in resList5Women:
-    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{count}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    count += 1
+  count = 1
   html += "</table>"
 
   # 3 km Hommes
   html += "<h3>3 km Hommes</h3>"
-  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
+  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Classement</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
   for runner in resList3Men:
-    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{count}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    count += 1
+  count = 1
   html += "</table>"
 
   # 3 km Femmes
   html += "<h3>3 km Femmes</h3>"
-  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
+  html += "<table><tr><th>Nom et prénom</th><th>Classe</th><th>Classement</th><th>Vitesse nette (km/h)</th><th>Vitesse brute (km/h)</th><th>Durée brute</th></tr>"
   for runner in resList3Women:
-    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    html += f"<tr><td>{runner[0]}</td><td>{runner[3]}</td><td>{count}</td><td>{runner[1]}</td><td>{runner[4]}</td><td>{runner[5]}</td></tr>"
+    count += 1
+  count = 1
   html += "</table>"
 
   file = open("../html/result.html", "wb")
@@ -425,6 +441,6 @@ def getAllTime():
   file.close()
   print("[FINAL STEP 2] - Génération des fichiers d'affichages - ✅")
 
-renderDossardsInit()
+#renderDossardsInit()
 #renderDossardsHTML()
-#getAllTime()
+getAllTime()
