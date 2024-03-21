@@ -2,8 +2,9 @@ import pandas
 from datetime import datetime, time, timedelta
 from collections import defaultdict
 import re
+import math
 
-fileName = "../excel/fichier cross 2023.xlsm" # Nom du fichier excel du cross
+fileName = "../excel/fichier cross 2024.xlsx" # Nom du fichier excel du cross
 
 dateCross = "Mardi 26 mars 2024" # Date du cross
 
@@ -67,11 +68,15 @@ def renderDossardsHTML():
 
     # Génération des listes des éléves par classe
     for _, s in cl.iterrows():
-      html = html + "<div class='row'><div class='cell col_1'>" + str(s.NOM) + "</div><div class='cell col_2'>" + str(
-          s.PRENOM) + "</div><div class='cell col_3'>" + str(s.PARTICIPATION) + "</div><div class='cell col_4'>" + str(int(s.DOSSARDS)) + "</div></div>"""
+      dos = ""
+      if not math.isnan(s.DOSSARDS):
+        dos = str(int(s.DOSSARDS))
+      else: 
+        dos = "/"
+      html = html + "<div class='row'><div class='cell col_1'>" + str(s.NOM) + "</div><div class='cell col_2'>" + str(s.PRENOM) + "</div><div class='cell col_3'>" + str(s.PARTICIPATION) + "</div><div class='cell col_4'>" + dos + "</div></div>"""
     
     # Génération des footers
-    html = html + "</div><div class='footer'>Merci de bien respecter les dossards distribués.</br>Des épingles vous seront fournies au niveau du départ</div></div>"
+    html = html + "</div><div class='footer'>Merci de bien respecter les dossards distribués.</br>Des épingles vous seront fournies au niveau du départ.</div></div>"
 
   # Génération des fichiers
   html = html + "</div></div></body></html>"
@@ -445,5 +450,5 @@ def getAllTime():
   print("[FINAL STEP 2] - Génération des fichiers d'affichages - ✅")
 
 #renderDossardsInit()
-#renderDossardsHTML()
-getAllTime()
+renderDossardsHTML()
+#getAllTime()
