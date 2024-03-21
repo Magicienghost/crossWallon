@@ -80,7 +80,7 @@ def renderDossardsHTML():
 
   # Génération des fichiers
   html = html + "</div></div></body></html>"
-  file = open("../html/recap_inscription.html", "w")
+  file = open("../html/recapInscription.html", "w")
   file.write(html)
   file.close()
   print("[DOSSARDS] - ✅")
