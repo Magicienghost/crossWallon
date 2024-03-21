@@ -33,9 +33,11 @@
 La réalisation du fichier Excel permettant l'enregistrement des participations et des résultats du Cross ne demande pas une connaissance experte d'Excel mais juste une forte rigueur.
 - Feuille `all_eleves` : doit contenir les listings de l'ensemble des élèves élligibles à la participation au Cross (en 2024 : toutes les prépas, DCG 1, 2 et 3, et les CPES)
   - Au minimum, il faut le nom, prénom, classe et sexe de chaque élève pour ne pas obstruer le fonctionnement des fonctions des autres feuilles. 
-  - Attention, il peut y avair une distinction entre les MP et les MPI qui doivent être rassemblées en MP(I) (de même pour les MPE et MPIE).
+  - Attention, il peut y avoir une distinction entre les MP et les MPI qui doivent être rassemblées en MP(I) (de même pour les MPE et MPIE).
 - Feuille `inscription` : doit contenir l'ensemble des inscriptions au Cross (coureurs qu'ils soient profs ou élèves et les balises). 
   - Le remplissage de cette feuille est en partie automatique : après avoir rentré le nom & prénom d'un élève, sa classe, son sexe et son numéro seront automatiquement recherchés dans la feuille `all_eleves` (dans le cas d'un prof, son nom et prénom seront inconnus, il sera donc nécessaire d'entrer les infos à la main).
   - Il restera à entrer son équipe (ELEVE ou PROF) ainsi que sa participation (3, 5, 8 ou Balise), s'il s'agit d'un coureur, il faudra également le lui attribuer un dossard correspondant à la distance qu'il parcourt. 
 - Feuille `balise` : feuille entièrement automatique, elle récupère les noms des participants identifiés comme "Balise" et dresse la liste de ces derniers. Elle permet au programme python de calculer plus rapidement les avantages apportés par les balises à chaque classe. 
 - Feuille `hash` : ne sert que de base de données pour la feuille `inscription` et ne change pas d'une année à l'autre. 
+
+## > En cas de problème, ouvrir une issue Github ou me mentionner sur le discord de Wallon (`@magicien_ghost`).
