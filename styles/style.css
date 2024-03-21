@@ -59,7 +59,7 @@ body.A5.landscape .sheet { width: 210mm; height: 147mm }
 }
 
 .row_first{
-	height: 30px !important;
+	height: 22px !important;
 	border-bottom: 1.5px solid black !important;
 }
 
@@ -73,7 +73,7 @@ body.A5.landscape .sheet { width: 210mm; height: 147mm }
 
 .logo{
 	background-image: url(logo_wallon.png);
-	height: 200px;
+	height: 170px;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
