@@ -16,7 +16,7 @@ def renderDossardsInit():
   classes = dataPeople.set_index(dataPeople.Division)
 
   # Génération des entêtes des pages
-  html = "<html><head><link rel='stylesheet' href='../styles/styleInit.css' ><style>@page { size: A4 }</style></head><body class='A4'>"
+  html = "<!DOCTYPE html><html><head><link rel='stylesheet' href='../styles/styleInit.css' ><style>@page { size: A4 }</style></head><body class='A4'>"
 
   for classe in classes.index.drop_duplicates():
     cl = classes.loc[classe]
@@ -55,7 +55,7 @@ def renderDossardsHTML():
   classes = dataInscription.set_index(dataInscription.CLASSE)
 
   # Génération des entêtes des pages
-  html = "<html><head><link rel='stylesheet' href='../styles/style.css' ><style>@page { size: A4 }</style></head><body class='A4'>"
+  html = "<!DOCTYPE html><html><head><link rel='stylesheet' href='../styles/style.css' ><style>@page { size: A4 }</style></head><body class='A4'>"
   for classe in classes.index.drop_duplicates():
     cl = classes.loc[classe]
 
