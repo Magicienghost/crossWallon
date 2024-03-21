@@ -7,6 +7,9 @@ fileName = "../excel/fichier cross 2023.xlsm" # Nom du fichier excel du cross
 
 dateCross = "Mardi 26 mars 2024" # Date du cross
 
+hourTab = [time(16, 39, 00), time(16, 33, 59), time(16, 30, 00)] # Heures des départs à la seconde près (3km, 5km, 8km)
+distTab = [3.33, 5.62, 8.72] # Distance réelle pour chaque course
+
 def getRunners():
   return pandas.read_excel(fileName, sheet_name="inscription") # Ne pas toucher
 
