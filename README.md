@@ -13,6 +13,10 @@
 
 ## Focus sur python
 - Le fichier principal est [cross.py](https://github.com/Magicienghost/crossWallon/blob/main/python/cross.py) (les autres fichiers python tendent à disparaître)
+- Les modules à installer sont listés dans [requirements.txt](https://github.com/Magicienghost/crossWallon/blob/main/python/requirements.txt)
+  - Nécessite d'exécuter pour les installer tous d'un coup : 
+  ```cmd
+    pip install -r requirements.txt ```
 - Les fonctions ne seront pas presque pas à modifier d'une année à l'autre, leur fonctionnement est quasi autonome. 
 - Voici les points auxquels il faut prêter attention avant le Cross : 
   - [`fileName`](https://github.com/Magicienghost/crossWallon/blob/main/python/cross.py#L6) : correspond au nom du fichier Excel utilisé pour l'inscription (situé par défaut dans [./excel](https://github.com/Magicienghost/crossWallon/blob/main/excel/))
@@ -26,6 +30,7 @@
     - La fonction `getAllTime()` génére un fichier HTML `result.html` contenant le sésame : les résultats complets du Cross, il se compose du classement des classes ayant participées ainsi que le classement individuel regroupé par sexe et distance. 
     - L'ensemble des fichiers HTML générés sont prêts pour être imprimer. 
     - Les fonctions non spécifiées ci-dessus sont des fonctions auxiliaires utilisées par les fonctions principales et ne nécessitent donc pas d'explications.
+- Pour fonctionner le programme a besoin de modules qui doivent être installés sur l'ordinateur 
 
 ### En dehors des 5 variables mentionnées ci-dessus le reste des fonctions / lignes n'ont pas à être modifiées, cela pourrait rendre le code inutilisable ou fausser les résultats.
 
@@ -40,4 +45,4 @@ La réalisation du fichier Excel permettant l'enregistrement des participations 
 - Feuille `balise` : feuille entièrement automatique, elle récupère les noms des participants identifiés comme "Balise" et dresse la liste de ces derniers. Elle permet au programme python de calculer plus rapidement les avantages apportés par les balises à chaque classe. 
 - Feuille `hash` : ne sert que de base de données pour la feuille `inscription` et ne change pas d'une année à l'autre. 
 
-## > En cas de problème, ouvrir une issue Github ou me mentionner sur le discord de Wallon (`@magicien_ghost`).
+## En cas de problème, ouvrir une issue Github ou me mentionner sur le discord de Wallon (`@magicien_ghost`).
