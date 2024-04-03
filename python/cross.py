@@ -8,7 +8,7 @@ fileName = "../excel/fichier cross 2024.xlsx" # Nom du fichier excel du cross
 
 dateCross = "Mardi 26 mars 2024" # Date du cross
 
-hourTab = [time(16, 39, 00), time(16, 33, 59), time(16, 30, 00)] # Heures des départs à la seconde près (3km, 5km, 8km)
+hourTab = [time(16, 30, 11), time(16, 26, 4), time(16, 22, 16)] # Heures des départs à la seconde près (3km, 5km, 8km)
 distTab = [3.33, 5.62, 8.72] # Distance réelle pour chaque course
 
 def getRunners():
@@ -94,8 +94,6 @@ def convert_datetime_to_time(val):
 
 
 def getAllTime():
-  hourTab = [time(16, 39, 00), time(16, 33, 59), time(16, 30, 00)]
-  distTab = [3.33, 5.62, 8.72]
 
   dataTimeEnd = pandas.read_excel(fileName, sheet_name="arrivée")
   print("[STEP 1] - Acquisition données - ✅")
@@ -239,17 +237,19 @@ def getAllTime():
 
   # Calcul des distances totales à parcourir / classes
   effectDic = {
-      "MPSI-2I": 47,
-      "MPSI1": 44,
-      "MP(I)E": 41,
-      "MP(I)": 41,
-      "DCG3": 35,
-      "DCG1": 40,
-      "PC": 40,
-      "PCE": 37,
-      "PCSI1": 46,
-      "PCSI2": 43,
-      "PSI": 41
+      "MPSI-2I": 51,
+      "MPSI": 50,
+      "MP(I)E": 36,
+      "MP(I)": 42,
+      "DCG3": 28,
+      "DCG2" : 29,
+      "DCG1": 31,
+      "PC": 47,
+      "PC E": 44,
+      "PCSI1": 43,
+      "PCSI2": 46,
+      "PSI": 42,
+      "CPES": 16
   }
 
   for _, s in classData.items():
@@ -315,8 +315,7 @@ def getAllTime():
     for dos, netSpeed, netDuration, speed, duration in zip(s.get("dos"), s.get("netSpeed"), s.get("netDuration"), s.get("speed"), s.get("duration")):
       if dos > 7999:
         if _ == "women":
-          resList8Women.append((dataRun.loc[dataRun['DOSSARDS'] == dos, 'PRENOM'].iloc[0]+" " + dataRun.loc[dataRun['DOSSARDS'] == dos, 'NOM'].iloc[0].upper(), round(
-              netSpeed, 3), netDuration, dataRun.loc[dataRun['DOSSARDS'] == dos, 'CLASSE'].iloc[0], round(speed, 3), timedelta(seconds=duration.total_seconds())))
+          resList8Women.append((dataRun.loc[dataRun['DOSSARDS'] == dos, 'PRENOM'].iloc[0]+" " + dataRun.loc[dataRun['DOSSARDS'] == dos, 'NOM'].iloc[0].upper(), round(netSpeed, 3), netDuration, dataRun.loc[dataRun['DOSSARDS'] == dos, 'CLASSE'].iloc[0], round(speed, 3), timedelta(seconds=duration.total_seconds())))
         else:
           resList8Men.append((dataRun.loc[dataRun['DOSSARDS'] == dos, 'PRENOM'].iloc[0]+" " + dataRun.loc[dataRun['DOSSARDS'] == dos, 'NOM'].iloc[0].upper(), round(
               netSpeed, 3), netDuration, dataRun.loc[dataRun['DOSSARDS'] == dos, 'CLASSE'].iloc[0], round(speed, 3), timedelta(seconds=duration.total_seconds())))
@@ -450,5 +449,5 @@ def getAllTime():
   print("[FINAL STEP 2] - Génération des fichiers d'affichages - ✅")
 
 #renderDossardsInit()
-renderDossardsHTML()
-#getAllTime()
+#renderDossardsHTML()
+getAllTime()
